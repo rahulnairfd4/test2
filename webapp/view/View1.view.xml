@@ -1,0 +1,45 @@
+<mvc:View controllerName="fd.WebServices.controller.View1" xmlns:viz="sap.viz.ui5.controls" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<viz:VizFrame id="graph1" width="100%"></viz:VizFrame>
+					<Table id="idTable" items="{ path: '/' }">
+						<headerToolbar>
+							<Toolbar>
+								<content>
+									<Title text="Measure" level="H2"/>
+								</content>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column>
+								<Text text="CapabilityId"/>
+							</Column>
+							<Column>
+								<Text text="SensorId"/>
+							</Column>
+							<Column>
+								<Text text="DeviceData"/>
+							</Column>
+							<Column>
+								<Text text="Timestamp"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Text text="{capabilityId}"/>
+									<Text text="{sensorId}"/>
+									<Text text="{measure/DeviceData_MeasuredValues}"/>
+									<Text text="{timestamp}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
